@@ -86,7 +86,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, TCHAR *lpCmdLin
     EGLint iMajorVersion, iMinorVersion;
     EGLint iConfigs;
     int i;
-
+           GLuint mRenderBufferId;
     int ret = 0;
     // Register the windows class
     WNDCLASS sWC;
@@ -245,5 +245,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, TCHAR *lpCmdLin
     EGLEWTest(glDeleteVertexArraysOES );
     EGLEWTest(glGenVertexArraysOES );
     EGLEWTest(glIsVertexArrayOES )
+ 
+        glGenRenderbuffersOES(1, &mRenderBufferId);
         return ret;
 }
