@@ -52,7 +52,9 @@
 #else
 #   define eglewGetProcAddress(x) eglGetProcAddress(#x)
 #endif
-
+#if defined(__cplusplus)
+extern "C" {
+#endif
 /*
 GL_OES_matrix_palette
 */
@@ -62,10 +64,10 @@ typedef void (GL_APIENTRY * PFNGLMATRIXINDEXPOINTEROES) (GLint size, GLenum type
 typedef void (GL_APIENTRY * PFNGLWEIGHTPOINTEROES) (GLint size, GLenum type, GLsizei stride, const GLvoid *pointer);
 
 /* Function pointers */
-PFNGLCURRENTPALETTEMATRIXOES			glCurrentPaletteMatrixOES;
-PFNGLLOADPALETTEFROMMODELVIEWMATRIXOES	glLoadPaletteFromModelViewMatrixOES;
-PFNGLMATRIXINDEXPOINTEROES				glMatrixIndexPointerOES;
-PFNGLWEIGHTPOINTEROES					glWeightPointerOES;
+extern PFNGLCURRENTPALETTEMATRIXOES			glCurrentPaletteMatrixOES;
+extern PFNGLLOADPALETTEFROMMODELVIEWMATRIXOES	glLoadPaletteFromModelViewMatrixOES;
+extern PFNGLMATRIXINDEXPOINTEROES				glMatrixIndexPointerOES;
+extern PFNGLWEIGHTPOINTEROES					glWeightPointerOES;
 
 /*
 GL_IMG_texture_env_enhanced_fixed_function
@@ -158,8 +160,8 @@ typedef void (APIENTRY * PFNGLCLIPPLANEXIMG) (GLenum p, GLfixed eqn[4]);
 
 
 /* Function pointers */
-PFNGLCLIPPLANEFIMG	glClipPlanefIMG;
-PFNGLCLIPPLANEXIMG	glClipPlanexIMG;
+extern PFNGLCLIPPLANEFIMG	glClipPlanefIMG;
+extern PFNGLCLIPPLANEXIMG	glClipPlanexIMG;
 
 
 /*
@@ -279,83 +281,83 @@ typedef void (GL_APIENTRY * PFNGLGENVERTEXARRAYSOES) (GLsizei n, GLuint *vertexa
 typedef GLboolean (GL_APIENTRY * PFNGLISVERTEXARRAYOES) (GLuint vertexarray);
 
 /* Function pointers */
-PFNGLVERTEXATTRIBPOINTERARB			glVertexAttribPointerARB;
-PFNGLENABLEVERTEXATTRIBARRAYARB		glEnableVertexAttribArrayARB;
-PFNGLDISABLEVERTEXATTRIBARRAYARB	glDisableVertexAttribArrayARB;
-PFNGLPROGRAMSTRINGARB				glProgramStringARB;
-PFNGLBINDPROGRAMARB					glBindProgramARB;
-PFNGLDELETEPROGRAMSARB				glDeleteProgramsARB;
-PFNGLGENPROGRAMSARB					glGenProgramsARB;
-PFNGLISPROGRAMARB					glIsProgramARB;
-PFNGLPROGRAMENVPARAMETER4FARB		glProgramEnvParameter4fARB;
-PFNGLPROGRAMENVPARAMETER4FVARB		glProgramEnvParameter4fvARB;
-PFNGLPROGRAMLOCALPARAMETER4FARB		glProgramLocalParameter4fARB;
-PFNGLPROGRAMLOCALPARAMETER4FVARB	glProgramLocalParameter4fvARB;
-PFNGLVERTEXATTRIB4FVARB				glVertexAttrib4fvARB;
-PFNGLVERTEXATTRIB4XVIMG				glVertexAttrib4xvIMG;
-PFNGLPROGRAMLOCALPARAMETER4XIMG		glProgramLocalParameter4xIMG;
-PFNGLPROGRAMLOCALPARAMETER4XVIMG	glProgramLocalParameter4xvIMG;
-PFNGLPROGRAMENVPARAMETER4XIMG		glProgramEnvParameter4xIMG;
-PFNGLPROGRAMENVPARAMETER4XVIMG		glProgramEnvParameter4xvIMG;
-PFNGLDRAWTEXIOES					glDrawTexiOES;
-PFNGLDRAWTEXIVOES					glDrawTexivOES;
-PFNGLDRAWTEXSOES					glDrawTexsOES;
-PFNGLDRAWTEXSVOES					glDrawTexsvOES;
-PFNGLDRAWTEXXOES					glDrawTexxOES;
-PFNGLDRAWTEXXVOES					glDrawTexxvOES;
-PFNGLDRAWTEXFOES					glDrawTexfOES;
-PFNGLDRAWTEXFVOES					glDrawTexfvOES;
+extern PFNGLVERTEXATTRIBPOINTERARB			glVertexAttribPointerARB;
+extern PFNGLENABLEVERTEXATTRIBARRAYARB		glEnableVertexAttribArrayARB;
+extern PFNGLDISABLEVERTEXATTRIBARRAYARB	glDisableVertexAttribArrayARB;
+extern PFNGLPROGRAMSTRINGARB				glProgramStringARB;
+extern PFNGLBINDPROGRAMARB					glBindProgramARB;
+extern PFNGLDELETEPROGRAMSARB				glDeleteProgramsARB;
+extern PFNGLGENPROGRAMSARB					glGenProgramsARB;
+extern PFNGLISPROGRAMARB					glIsProgramARB;
+extern PFNGLPROGRAMENVPARAMETER4FARB		glProgramEnvParameter4fARB;
+extern PFNGLPROGRAMENVPARAMETER4FVARB		glProgramEnvParameter4fvARB;
+extern PFNGLPROGRAMLOCALPARAMETER4FARB		glProgramLocalParameter4fARB;
+extern PFNGLPROGRAMLOCALPARAMETER4FVARB	glProgramLocalParameter4fvARB;
+extern PFNGLVERTEXATTRIB4FVARB				glVertexAttrib4fvARB;
+extern PFNGLVERTEXATTRIB4XVIMG				glVertexAttrib4xvIMG;
+extern PFNGLPROGRAMLOCALPARAMETER4XIMG		glProgramLocalParameter4xIMG;
+extern PFNGLPROGRAMLOCALPARAMETER4XVIMG	glProgramLocalParameter4xvIMG;
+extern PFNGLPROGRAMENVPARAMETER4XIMG		glProgramEnvParameter4xIMG;
+extern PFNGLPROGRAMENVPARAMETER4XVIMG		glProgramEnvParameter4xvIMG;
+extern PFNGLDRAWTEXIOES					glDrawTexiOES;
+extern PFNGLDRAWTEXIVOES					glDrawTexivOES;
+extern PFNGLDRAWTEXSOES					glDrawTexsOES;
+extern PFNGLDRAWTEXSVOES					glDrawTexsvOES;
+extern PFNGLDRAWTEXXOES					glDrawTexxOES;
+extern PFNGLDRAWTEXXVOES					glDrawTexxvOES;
+extern PFNGLDRAWTEXFOES					glDrawTexfOES;
+extern PFNGLDRAWTEXFVOES					glDrawTexfvOES;
 /* IMG_texture_stream */
-PFNGLGETTEXSTREAMDEVICEATTRIBIVIMG	glGetTexStreamDeviceAttribivIMG;
-PFNGLTEXBINDSTREAMIMG				glTexBindStreamIMG;
-PFNGLGETTEXSTREAMDEVICENAMEIMG		glGetTexStreamDeviceNameIMG;
+extern PFNGLGETTEXSTREAMDEVICEATTRIBIVIMG	glGetTexStreamDeviceAttribivIMG;
+extern PFNGLTEXBINDSTREAMIMG				glTexBindStreamIMG;
+extern PFNGLGETTEXSTREAMDEVICENAMEIMG		glGetTexStreamDeviceNameIMG;
 /* GL_EXT_multi_draw_arrays */
-PFNGLMULTIDRAWELEMENTS				glMultiDrawElementsEXT;
-PFNGLMULTIDRAWARRAYS				glMultiDrawArraysEXT;
+extern PFNGLMULTIDRAWELEMENTS				glMultiDrawElementsEXT;
+extern PFNGLMULTIDRAWARRAYS				glMultiDrawArraysEXT;
 
 /* GL_EXT_multi_draw_arrays */
-PFNGLMAPBUFFEROES                   glMapBufferOES;
-PFNGLUNMAPBUFFEROES                 glUnmapBufferOES;
-PFNGLGETBUFFERPOINTERVOES           glGetBufferPointervOES;
+extern PFNGLMAPBUFFEROES                   glMapBufferOES;
+extern PFNGLUNMAPBUFFEROES                 glUnmapBufferOES;
+extern PFNGLGETBUFFERPOINTERVOES           glGetBufferPointervOES;
 
 
 /* GL_OES_Framebuffer_object*/
 
-PFNGLISRENDERBUFFEROES glIsRenderbufferOES;
-PFNGLBINDRENDERBUFFEROES glBindRenderbufferOES;
-PFNGLDELETERENDERBUFFERSOES glDeleteRenderbuffersOES;
-PFNGLGENRENDERBUFFERSOES glGenRenderbuffersOES;
-PFNGLRENDERBUFFERSTORAGEOES glRenderbufferStorageOES;
-PFNGLGETRENDERBUFFERPARAMETERIVOES glGetRenderbufferParameterivOES;
-PFNGLISFRAMEBUFFEROES glIsFramebufferOES;
-PFNGLBINDFRAMEBUFFEROES glBindFramebufferOES;
-PFNGLDELETEFRAMEBUFFERSOES glDeleteFramebuffersOES;
-PFNGLGENFRAMEBUFFERSOES glGenFramebuffersOES;
-PFNGLCHECKFRAMEBUFFERSTATUSOES glCheckFramebufferStatusOES;
-PFNGLFRAMEBUFFERTEXTURE2DOES glFramebufferTexture2DOES;
-PFNGLFRAMEBUFFERRENDERBUFFEROES glFramebufferRenderbufferOES;
-PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVOES glGetFramebufferAttachmentParameterivOES;
-PFNGLGENERATEMIPMAPOES glGenerateMipmapOES;
+extern PFNGLISRENDERBUFFEROES glIsRenderbufferOES;
+extern PFNGLBINDRENDERBUFFEROES glBindRenderbufferOES;
+extern PFNGLDELETERENDERBUFFERSOES glDeleteRenderbuffersOES;
+extern PFNGLGENRENDERBUFFERSOES glGenRenderbuffersOES;
+extern PFNGLRENDERBUFFERSTORAGEOES glRenderbufferStorageOES;
+extern PFNGLGETRENDERBUFFERPARAMETERIVOES glGetRenderbufferParameterivOES;
+extern PFNGLISFRAMEBUFFEROES glIsFramebufferOES;
+extern PFNGLBINDFRAMEBUFFEROES glBindFramebufferOES;
+extern PFNGLDELETEFRAMEBUFFERSOES glDeleteFramebuffersOES;
+extern PFNGLGENFRAMEBUFFERSOES glGenFramebuffersOES;
+extern PFNGLCHECKFRAMEBUFFERSTATUSOES glCheckFramebufferStatusOES;
+extern PFNGLFRAMEBUFFERTEXTURE2DOES glFramebufferTexture2DOES;
+extern PFNGLFRAMEBUFFERRENDERBUFFEROES glFramebufferRenderbufferOES;
+extern PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVOES glGetFramebufferAttachmentParameterivOES;
+extern PFNGLGENERATEMIPMAPOES glGenerateMipmapOES;
 
 #ifndef GL_OES_point_size_array
 /* GL_OES_point_size_array */
-PFNGLPOINTSIZEPOINTEROES glPointSizePointerOES;
+extern PFNGLPOINTSIZEPOINTEROES glPointSizePointerOES;
 #endif
-PFNGLQUERYMATRIXXOES    glQueryMatrixxOES;
+extern PFNGLQUERYMATRIXXOES    glQueryMatrixxOES;
 
-PFNGLBLENDEQUATIONOES             glBlendEquationOES;
-PFNGLBLENDEQUATIONSEPARATEOES     glBlendEquationSeparateOES;
+extern PFNGLBLENDEQUATIONOES             glBlendEquationOES;
+extern PFNGLBLENDEQUATIONSEPARATEOES     glBlendEquationSeparateOES;
 
 
 /* GL_EXT_discard_framebuffer */
-PFNGLDISCARDFRAMEBUFFEREXT			glDiscardFramebufferEXT;
+extern PFNGLDISCARDFRAMEBUFFEREXT			glDiscardFramebufferEXT;
 
 /* GL_OES_vertex_array_object */
 #define GL_VERTEX_ARRAY_BINDING_OES 0x85B5
-PFNGLBINDVERTEXARRAYOES glBindVertexArrayOES;
-PFNGLDELETEVERTEXARRAYSOES glDeleteVertexArraysOES;
-PFNGLGENVERTEXARRAYSOES glGenVertexArraysOES;
-PFNGLISVERTEXARRAYOES glIsVertexArrayOES;
+extern PFNGLBINDVERTEXARRAYOES glBindVertexArrayOES;
+extern PFNGLDELETEVERTEXARRAYSOES glDeleteVertexArraysOES;
+extern PFNGLGENVERTEXARRAYSOES glGenVertexArraysOES;
+extern PFNGLISVERTEXARRAYOES glIsVertexArrayOES;
 
 /**************************************************************************
 ****************************** EGL EXTENSIONS *****************************
@@ -367,4 +369,7 @@ EGL_IMG_power_management
 /* Tokens */
 #define EGL_CONTEXT_LOST_IMG						0x300E
 
-void eglewInit();
+extern void eglewInit();
+#if defined(__cplusplus)
+}
+#endif
