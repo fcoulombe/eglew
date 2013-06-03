@@ -43,3 +43,15 @@ target_link_libraries (eglewTest  eglew ${eglew_LIBS})
 
 add_test (eglewTestRun eglewTest)
 set_tests_properties (eglewTestRun  PROPERTIES FAIL_REGULAR_EXPRESSION "has not received an address")
+
+
+install (TARGETS eglew DESTINATION ${PROJECT_SOURCE_DIR}/release/lib/${EGLEW_ARCHITECTURE})
+install (FILES include/eglew.h DESTINATION ${PROJECT_SOURCE_DIR}/release/include)
+
+# build a CPack driven installer package
+#include (InstallRequiredSystemLibraries)
+#set (CPACK_RESOURCE_FILE_LICENSE  "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+#set (CPACK_PACKAGE_VERSION_MAJOR "${eglew_VERSION_MAJOR}")
+#set (CPACK_PACKAGE_VERSION_MINOR "${eglew_VERSION_MINOR}")
+#include (CPack)
+
