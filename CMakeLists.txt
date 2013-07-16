@@ -14,8 +14,9 @@ else()
 ENDIF()
 
 
-	SET(POWERVR_SDK_ROOT "C:\\Imagination\\PowerVR\\GraphicsSDK\\SDK_3.1\\Builds\\")
-	SET(GL_INCLUDE ${POWERVR_SDK_ROOT}/Include/)
+    SET(POWERVR_SDK_ROOT "C:\\Imagination\\PowerVR\\GraphicsSDK\\SDK_3.0\\Builds\\")
+	#SET(POWERVR_SDK_ROOT "C:\\Imagination\\PowerVR\\GraphicsSDK\\SDK_3.1\\Builds\\")
+	SET(GL_INCLUDE ${POWERVR_SDK_ROOT}/OGLES2/Include)
 	
 	IF(${EGLEW_ARCHITECTURE} STREQUAL "32bit")
 		SET(GL_LIBS_PATH  ${POWERVR_SDK_ROOT}Windows/x86_32/Lib)
