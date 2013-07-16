@@ -28,15 +28,15 @@
 #       import <OpenGLES/ES1/glext.h>
 #   else
 #       include <EGL/egl.h>
-#       include <GLES/gl.h>
-#       include <GLES/glext.h>
+#       include <GLES2/gl2.h>
+#       include <GLES2/gl2ext.h>
 #   endif
 #else
 #   if !defined(EGL_NOT_PRESENT)
 #       include <EGL/egl.h>
 #   endif
-#   include <GLES/gl.h>
-#   include <GLES/glext.h>
+#   include <GLES2/gl2.h>
+#   include <GLES2/gl2ext.h>
 #endif  // __APPLE__
 
 #ifndef APIENTRY
