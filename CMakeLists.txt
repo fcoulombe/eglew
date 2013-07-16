@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 2.8)
 project (eglew)
 set (eglew_VERSION_MAJOR 1)
 set (eglew_VERSION_MINOR 0)
+option ( ENABLE_TEST "enable building the unittest" OFF )
 
 INCLUDE(CheckTypeSize)
 CHECK_TYPE_SIZE (size_t SIZE_T_SIZE)
@@ -38,12 +39,13 @@ message("${PROJECT_SOURCE_DIR}/include")
 add_library(eglew src/eglew.c include/eglew.h)
 
 
-add_executable (eglewTest WIN32 unittest/test.c)
-target_link_libraries (eglewTest  eglew ${eglew_LIBS})
-
-add_test (eglewTestRun eglewTest)
-set_tests_properties (eglewTestRun  PROPERTIES FAIL_REGULAR_EXPRESSION "has not received an address")
-
+if(${ENABLE_TEST})
+    add_executable (eglewTest WIN32 unittest/test.c)
+    target_link_libraries (eglewTest  eglew ${eglew_LIBS})
+    
+    add_test (eglewTestRun eglewTest)
+    set_tests_properties (eglewTestRun  PROPERTIES FAIL_REGULAR_EXPRESSION "has not received an address")
+endif()
 
 install (TARGETS eglew DESTINATION ${PROJECT_SOURCE_DIR}/release/lib/${EGLEW_ARCHITECTURE})
 install (FILES include/eglew.h DESTINATION ${PROJECT_SOURCE_DIR}/release/include)
