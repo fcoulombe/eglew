@@ -21,6 +21,7 @@
 */
 
 #include "eglew.h"
+#include <string.h>
 
 PFNGLCURRENTPALETTEMATRIXOES			glCurrentPaletteMatrixOES=0;
 PFNGLLOADPALETTEFROMMODELVIEWMATRIXOES	glLoadPaletteFromModelViewMatrixOES=0;
