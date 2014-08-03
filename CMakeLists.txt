@@ -48,8 +48,8 @@ if(${ENABLE_TEST})
     set_tests_properties (eglewTestRun  PROPERTIES FAIL_REGULAR_EXPRESSION "has not received an address")
 endif()
 
-install (TARGETS eglew DESTINATION ${PROJECT_SOURCE_DIR}/release/lib/${EGLEW_ARCHITECTURE})
-install (FILES include/eglew.h DESTINATION ${PROJECT_SOURCE_DIR}/release/include)
+install (TARGETS eglew DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+install (FILES include/eglew.h DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
 
 # build a CPack driven installer package
 #include (InstallRequiredSystemLibraries)
